@@ -1,0 +1,42 @@
+--LOADING DE REPOSITÓRIOS
+
+--Criar no 'styles.js' uma tag <Loading /> com atributo
+--de 'styled.ActivityIndicator.attrs'
+  ->Importar para dentro do 'index.js'
+
+--SCROLL INFINITO
+
+--Criar nova variável de estado 'page'
+  ->Criar função load(), que irá popular a FlatList através de uma api com paginação;
+  ->Criar função loadMore() que irá atualizar a 'page' e carregar mais dados;
+  ->Colocar a função loadMore() na prop onEndReached do <Stars />;
+  ->Configurar prop onEndReachedThreshold={0.2} para carregar mais dados
+    sempre que faltar 20% de exibição dos itens.
+
+--PULL TO REFRESH
+
+--Criar nova variável de estado 'refreshing' para sinalizar
+--momento de atualização da página
+
+--Criar função refreshList() que atualiza estado 'refreshing',
+--esvazia o estado 'stars' e chama a funcção load()
+ ->Colocar a função na prop onRefresh da tag <Stars />
+ ->Criar a prop 'refreshing'
+
+--WEBVIEW
+
+--Instalar extensão de WEBVIEW
+  -> yarn add react-native-webview
+  -> Configurar em android/gradle.properties
+    android.useAndroidX=true
+    android.enableJetifier=true
+
+--Criar novo component 'Repository' em 'pages'
+  ->Criar styles do component.
+
+--Criar função handleNavigate() que direciona para outra página
+--com navegador imbutido, através da propriedade 'this.props.navigation'
+  ->Colocar função na prop 'onPress' do <Starred />
+
+--Configurar novo componente em 'routes.js'
+
